@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImóvelDireto - Venda Sem Comissões</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Sans+3:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    .font-heading { font-family: 'Playfair Display', serif; }
+    .font-body { font-family: 'Source Sans 3', sans-serif; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full font-body">
+  <div id="app" class="w-full h-full overflow-auto" style="background: linear-gradient(135deg, #1a1f2e 0%, #2d3548 100%);"><!-- Hero Section -->
+   <header class="relative px-6 py-12 md:py-20 text-center">
+    <div class="max-w-4xl mx-auto"><!-- Logo -->
+     <div class="flex items-center justify-center gap-3 mb-8">
+      <div class="w-12 h-12 rounded-lg flex items-center justify-center" style="background: #c9a96e;">
+       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+       </svg>
+      </div><span class="font-heading text-2xl font-bold" style="color: #c9a96e;">ImóvelDireto</span>
+     </div><!-- Main Title -->
+     <h1 id="main-title" class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Venda o Seu Imóvel<br><span style="color: #c9a96e;">Diretamente</span></h1>
+     <p id="subtitle" class="text-xl md:text-2xl mb-8" style="color: #a0aec0;">Sem comissões de agência. Processo simples e transparente.</p><!-- Response Time Badge -->
+     <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-12" style="background: rgba(201, 169, 110, 0.15); border: 1px solid #c9a96e;">
+      <svg class="w-5 h-5" style="color: #c9a96e;" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg><span class="font-semibold" style="color: #c9a96e;">Resposta em <span id="response-time">48 horas</span></span>
+     </div>
+    </div>
+   </header><!-- Features Section -->
+   <section class="px-6 py-12">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="font-heading text-2xl md:text-3xl font-bold text-white text-center mb-12">Ajudamos em Situações Especiais</h2>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Divórcios -->
+      <div class="p-6 rounded-2xl text-center" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center" style="background: rgba(201, 169, 110, 0.2);"><span class="text-3xl">⚖️</span>
+       </div>
+       <h3 class="font-heading font-semibold text-white text-lg mb-2">Divórcios</h3>
+       <p class="text-sm" style="color: #a0aec0;">Partilha de bens de forma rápida e justa</p>
+      </div><!-- Heranças -->
+      <div class="p-6 rounded-2xl text-center" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center" style="background: rgba(201, 169, 110, 0.2);"><span class="text-3xl">📜</span>
+       </div>
+       <h3 class="font-heading font-semibold text-white text-lg mb-2">Heranças</h3>
+       <p class="text-sm" style="color: #a0aec0;">Resolução de partilhas entre herdeiros</p>
+      </div><!-- Penhoras -->
+      <div class="p-6 rounded-2xl text-center" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center" style="background: rgba(201, 169, 110, 0.2);"><span class="text-3xl">🏦</span>
+       </div>
+       <h3 class="font-heading font-semibold text-white text-lg mb-2">Penhoras</h3>
+       <p class="text-sm" style="color: #a0aec0;">Evite a execução e negoceie diretamente</p>
+      </div><!-- Venda Rápida -->
+      <div class="p-6 rounded-2xl text-center" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+       <div class="w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center" style="background: rgba(201, 169, 110, 0.2);"><span class="text-3xl">⚡</span>
+       </div>
+       <h3 class="font-heading font-semibold text-white text-lg mb-2">Venda Rápida</h3>
+       <p class="text-sm" style="color: #a0aec0;">Necessidade urgente de liquidez</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Zones Section -->
+   <section class="px-6 py-12">
+    <div class="max-w-3xl mx-auto text-center">
+     <h2 class="font-heading text-2xl md:text-3xl font-bold text-white mb-6">Zonas de Atuação</h2>
+     <div class="flex flex-wrap justify-center gap-3"><span class="px-5 py-2 rounded-full text-white font-medium" style="background: rgba(201, 169, 110, 0.3);">📍 Sintra</span> <span class="px-5 py-2 rounded-full text-white font-medium" style="background: rgba(201, 169, 110, 0.3);">📍 Oeiras</span> <span class="px-5 py-2 rounded-full text-white font-medium" style="background: rgba(201, 169, 110, 0.3);">📍 Amadora</span> <span class="px-5 py-2 rounded-full text-white font-medium" style="background: rgba(201, 169, 110, 0.3);">📍 Odivelas</span> <span class="px-5 py-2 rounded-full text-white font-medium" style="background: rgba(201, 169, 110, 0.3);">📍 Loures</span>
+     </div>
+    </div>
+   </section><!-- Form Section -->
+   <section class="px-6 py-12 pb-20">
+    <div class="max-w-xl mx-auto">
+     <div class="p-8 md:p-10 rounded-3xl" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+      <h2 id="form-title" class="font-heading text-2xl md:text-3xl font-bold text-white text-center mb-2">Peça a Sua Avaliação Gratuita</h2>
+      <p class="text-center mb-8" style="color: #a0aec0;">Sem compromisso. 100% confidencial.</p>
+      <form id="contact-form" class="space-y-5"><!-- Nome -->
+       <div><label for="nome" class="block text-sm font-medium text-white mb-2">Nome Completo *</label> <input type="text" id="nome" name="nome" required class="w-full px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); --tw-ring-color: #c9a96e;" placeholder="O seu nome">
+       </div><!-- Telefone -->
+       <div><label for="telefone" class="block text-sm font-medium text-white mb-2">Telefone *</label> <input type="tel" id="telefone" name="telefone" required class="w-full px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); --tw-ring-color: #c9a96e;" placeholder="912 345 678">
+       </div><!-- Email -->
+       <div><label for="email" class="block text-sm font-medium text-white mb-2">E-mail *</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); --tw-ring-color: #c9a96e;" placeholder="email@exemplo.pt">
+       </div><!-- Morada do Imóvel -->
+       <div><label for="morada" class="block text-sm font-medium text-white mb-2">Morada do Imóvel *</label> <input type="text" id="morada" name="morada" required class="w-full px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); --tw-ring-color: #c9a96e;" placeholder="Rua, número, localidade">
+       </div><!-- Observações -->
+       <div><label for="observacoes" class="block text-sm font-medium text-white mb-2">Observações</label> <textarea id="observacoes" name="observacoes" rows="3" class="w-full px-4 py-3 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all resize-none" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); --tw-ring-color: #c9a96e;" placeholder="Situação do imóvel, urgência, etc."></textarea>
+       </div><!-- Submit Button --> <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl font-semibold text-lg text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100" style="background: linear-gradient(135deg, #c9a96e 0%, #a88a4e 100%);"> <span id="btn-text">Enviar Pedido</span> <span id="btn-loading" class="hidden">A enviar...</span> </button>
+      </form><!-- Success Message -->
+      <div id="success-message" class="hidden text-center py-8">
+       <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: rgba(72, 187, 120, 0.2);">
+        <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+       </div>
+       <h3 class="font-heading text-2xl font-bold text-white mb-2">Obrigado!</h3>
+       <p style="color: #a0aec0;">O seu pedido foi enviado com sucesso.<br>
+        Entraremos em contacto em breve.</p><button id="new-submission-btn" class="mt-6 px-6 py-2 rounded-lg font-medium transition-all hover:opacity-80" style="background: rgba(201, 169, 110, 0.2); color: #c9a96e; border: 1px solid #c9a96e;"> Novo Pedido </button>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="px-6 py-8 text-center" style="border-top: 1px solid rgba(255,255,255,0.1);">
+    <p class="text-sm" style="color: #6b7280;">© 2024 ImóvelDireto — Todos os direitos reservados</p>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: 'Venda o Seu Imóvel<br><span style="color: #c9a96e;">Diretamente</span>',
+      subtitle: 'Sem comissões de agência. Processo simples e transparente.',
+      response_time: '48 horas',
+      form_title: 'Peça a Sua Avaliação Gratuita',
+      font_family: 'Source Sans 3',
+      font_size: 16,
+      background_color: '#1a1f2e',
+      accent_color: '#c9a96e',
+      text_color: '#ffffff',
+      muted_color: '#a0aec0',
+      card_color: 'rgba(255,255,255,0.05)'
+    };
+
+    let currentData = [];
+
+    // Data SDK Handler
+    const dataHandler = {
+      onDataChanged(data) {
+        currentData = data;
+      }
+    };
+
+    // Element SDK functions
+    async function onConfigChange(config) {
+      const mainTitle = document.getElementById('main-title');
+      const subtitle = document.getElementById('subtitle');
+      const responseTime = document.getElementById('response-time');
+      const formTitle = document.getElementById('form-title');
+
+      if (mainTitle) mainTitle.innerHTML = config.main_title || defaultConfig.main_title;
+      if (subtitle) subtitle.textContent = config.subtitle || defaultConfig.subtitle;
+      if (responseTime) responseTime.textContent = config.response_time || defaultConfig.response_time;
+      if (formTitle) formTitle.textContent = config.form_title || defaultConfig.form_title;
+
+      // Apply font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+
+      // Apply font size scaling
+      const fontSize = config.font_size || defaultConfig.font_size;
+      document.documentElement.style.fontSize = `${fontSize}px`;
+
+      // Apply colors
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const mutedColor = config.muted_color || defaultConfig.muted_color;
+
+      document.getElementById('app').style.background = `linear-gradient(135deg, ${bgColor} 0%, #2d3548 100%)`;
+      
+      document.querySelectorAll('[style*="color: #c9a96e"]').forEach(el => {
+        el.style.color = accentColor;
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => config.card_color || defaultConfig.card_color,
+            set: (value) => { config.card_color = value; window.elementSdk.setConfig({ card_color: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          },
+          {
+            get: () => config.muted_color || defaultConfig.muted_color,
+            set: (value) => { config.muted_color = value; window.elementSdk.setConfig({ muted_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['main_title', config.main_title || defaultConfig.main_title],
+        ['subtitle', config.subtitle || defaultConfig.subtitle],
+        ['response_time', config.response_time || defaultConfig.response_time],
+        ['form_title', config.form_title || defaultConfig.form_title]
+      ]);
+    }
+
+    // Form handling
+    function initForm() {
+      const form = document.getElementById('contact-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnLoading = document.getElementById('btn-loading');
+      const successMessage = document.getElementById('success-message');
+      const newSubmissionBtn = document.getElementById('new-submission-btn');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Check data limit
+        if (currentData.length >= 999) {
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'text-red-400 text-center mt-4';
+          errorDiv.textContent = 'Limite de submissões atingido. Por favor, contacte-nos diretamente.';
+          form.appendChild(errorDiv);
+          setTimeout(() => errorDiv.remove(), 5000);
+          return;
+        }
+
+        // Show loading
+        submitBtn.disabled = true;
+        btnText.classList.add('hidden');
+        btnLoading.classList.remove('hidden');
+
+        const formData = {
+          nome: document.getElementById('nome').value,
+          telefone: document.getElementById('telefone').value,
+          email: document.getElementById('email').value,
+          morada: document.getElementById('morada').value,
+          observacoes: document.getElementById('observacoes').value || '',
+          createdAt: new Date().toISOString()
+        };
+
+        try {
+          const result = await window.dataSdk.create(formData);
+          
+          if (result.isOk) {
+            form.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+          } else {
+            throw new Error('Erro ao enviar');
+          }
+        } catch (error) {
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'text-red-400 text-center mt-4';
+          errorDiv.textContent = 'Ocorreu um erro. Por favor, tente novamente.';
+          form.appendChild(errorDiv);
+          setTimeout(() => errorDiv.remove(), 5000);
+        } finally {
+          submitBtn.disabled = false;
+          btnText.classList.remove('hidden');
+          btnLoading.classList.add('hidden');
+        }
+      });
+
+      newSubmissionBtn.addEventListener('click', () => {
+        form.reset();
+        form.classList.remove('hidden');
+        successMessage.classList.add('hidden');
+      });
+    }
+
+    // Initialize
+    async function init() {
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues
+        });
+      }
+
+      if (window.dataSdk) {
+        await window.dataSdk.init(dataHandler);
+      }
+
+      initForm();
+    }
+
+    init();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ccd762083d741f6',t:'MTc3MDkxMzczMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
