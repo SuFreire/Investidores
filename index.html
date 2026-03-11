@@ -216,20 +216,10 @@
       const successMessage = document.getElementById('success-message');
       const newSubmissionBtn = document.getElementById('new-submission-btn');
 
-      form.addEventListener('submit', async (e) => {
+     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Check data limit
-        if (currentData.length >= 999) {
-          const errorDiv = document.createElement('div');
-          errorDiv.className = 'text-red-400 text-center mt-4';
-          errorDiv.textContent = 'Limite de submissões atingido. Por favor, contacte-nos diretamente.';
-          form.appendChild(errorDiv);
-          setTimeout(() => errorDiv.remove(), 5000);
-          return;
-        }
-
-        // Show loading
+        // Feedback visual de carregamento
         submitBtn.disabled = true;
         btnText.classList.add('hidden');
         btnLoading.classList.remove('hidden');
@@ -240,22 +230,34 @@
           email: document.getElementById('email').value,
           morada: document.getElementById('morada').value,
           observacoes: document.getElementById('observacoes').value || '',
-          createdAt: new Date().toISOString()
+          createdAt: new Date().toLocaleString('pt-PT')
         };
 
+        const scriptURL = "https://script.google.com/macros/s/AKfycbz3_wVKyTwnQjLBcmLJQJhRNcFDHZdeW-pC9PMVEarn96gMS_C9kJmlXZ1TBb73o0ka-g/exec";
+
         try {
-          const result = await window.dataSdk.create(formData);
+          // Usamos mode: 'no-cors' para evitar o bloqueio do browser
+          await fetch(scriptURL, {
+            method: "POST",
+            mode: "no-cors", 
+            cache: "no-cache",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+          });
+
+          // No modo 'no-cors' não conseguimos validar o status, 
+          // mas se o código chegou aqui sem disparar um erro de rede, o envio foi feito.
+          form.classList.add('hidden');
+          successMessage.classList.remove('hidden');
           
-          if (result.isOk) {
-            form.classList.add('hidden');
-            successMessage.classList.remove('hidden');
-          } else {
-            throw new Error('Erro ao enviar');
-          }
+          // Opcional: Enviar também para o teu SDK interno se necessário
+          if (window.dataSdk) { window.dataSdk.create(formData); }
+
         } catch (error) {
+          console.error("Erro técnico:", error);
           const errorDiv = document.createElement('div');
           errorDiv.className = 'text-red-400 text-center mt-4';
-          errorDiv.textContent = 'Ocorreu um erro. Por favor, tente novamente.';
+          errorDiv.textContent = 'Erro ao ligar ao servidor. Verifique a sua ligação.';
           form.appendChild(errorDiv);
           setTimeout(() => errorDiv.remove(), 5000);
         } finally {
@@ -294,3 +296,4 @@
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ccd762083d741f6',t:'MTc3MDkxMzczMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
